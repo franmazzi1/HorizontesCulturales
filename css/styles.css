@@ -81,7 +81,7 @@ section {
 }
 /* ------------- CABECERA ------------- */
 .hc-section{
-    background-image: url(resources/background.jpg);
+    background-image: url(../resources/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -100,10 +100,18 @@ section {
 }
 
 /* ------------- TALLERES ------------- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
 .card {
-    margin: 50px;
-    width: 300px;
-    height: 400px;
+    margin: 20px;
+    flex: 1 1 300px;
+    max-width: 400px;
+    height: 500px;
     border-radius: 5px;
     background: var(--i);
     background-size: cover;
@@ -127,7 +135,9 @@ section {
     color: rgba(255, 255, 255, .8);
     margin: 10px 0;
 }
-
+.content h2{
+    font-size: 1vw;
+}
 .card:hover .content {
     opacity: 1;
 }
