@@ -34,18 +34,7 @@ nav {
 
 }
 
-.logo img {
-    height: 30px;
-    margin-right: 10px;
-}
 
-.logo a {
-    transition: all 0.2s;
-}
-
-.logo a:hover {
-    filter: brightness(0) invert(1);
-}
 
 /* Menú hamburguesa en mobile */
 .menu-toggle {
@@ -64,7 +53,7 @@ nav {
     margin: 0;
 }
 
-.nav-links a {
+nav  a {
     color: var(--color-secundario);
     text-decoration: none;
     font-size: 1.25rem;
@@ -72,8 +61,12 @@ nav {
     transition: all 0.3s;
     white-space: nowrap; 
 }
+.logo a{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-.nav-links a:hover {
+nav a:hover {
     color: #a866a3;
 }
 
@@ -137,4 +130,130 @@ section {
 
 .card:hover .content {
     opacity: 1;
+}
+
+
+.footer {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    font-size: 0.95rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #d8a1d8;
+}
+
+.footer-section .socials a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.footer-section .socials img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+}
+
+.footer-section .socials img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #a867a8;
+    font-size: 0.85rem;
+}
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+@media (max-width: 768px) {
+    nav{
+        justify-content: space-between;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primario);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .talleres-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
 }

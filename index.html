@@ -22,7 +22,7 @@
         <nav>
             <div class="logo">
                 <a href="#" onclick="location.reload(); return false;">
-                    <img src="resources/logo.png" alt="Logo Horizontes Culturales">
+                    HC
                 </a>                
             </div>
             <div class="menu-toggle" id="menu-toggle">☰</div>
@@ -40,7 +40,7 @@
         <section class="hc-section">
             <div>
                 <h1 class="title">HORIZONTES CULTURALES</h1>
-                <h3 class="subtitle">Centro Cultural</h3>
+                <h3 class="subtitle">Espacio Cultural</h3>
             </div>
         </section>
 
@@ -81,6 +81,45 @@
         </section>
     </main>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Horizontes Culturales</h3>
+                <p>Espacio Cultural</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="studio/index.html">Talleres</a></li>
+                    <li><a href="aboutUs/index.html">Sobre Nosotros</a></li>
+                    <li><a href="library/index.html">Biblioteca</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p>Email: info@horizontes.com</p>
+                <p>Tel: +54 9 342 438-4664</p>
+                <div class="socials">
+                    <a href="#"><img src="resources/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="resources/icon-instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="resources/icon-youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Horizontes Culturales | Todos los derechos reservados
+        </div>
+    </footer>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+    
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+    
 
 </body>
 </html>
