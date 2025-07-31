@@ -132,7 +132,8 @@ section {
 /* ------------- TALLERES ------------- */
 
 .talleres-section {
-    flex-direction: column; 
+    flex-direction: column;
+    background: linear-gradient(to top, var(--color-secundario), var(--color-primario)); 
 }
 
 .talleres-wrapper {
@@ -144,7 +145,7 @@ section {
 .talleres-title {
     font-size: 4rem;         
     font-weight: 700;
-    color: var(--color-primario);
+    color: var(--color-secundario);
     margin-bottom: 60px;     
     line-height: 1.1;    
     transition: all 0.3s ease;
@@ -201,64 +202,125 @@ section {
 }
 /* ------------- EVENTOS ------------- */
 .events {
-  text-align: center;
-  flex-direction: column;
+    text-align: center;
+    flex-direction: column;
+    
 }
 
 .events-title {
-  font-size: 3rem;
-  margin-bottom: 40px;
-  color: var(--color-primario);
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: var(--color-primario);
 }
 
-/* Video + texto lado a lado */
 .event-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    padding: 5px;
 }
 
 .event-video video {
-  width: 300px;
-  height: 530px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    height: 530px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .event-description {
-  max-width: 600px;
-  font-size: 1.2rem;
-  color: #444;
-  line-height: 1.7;
-  text-align: left;
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.7;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.event-description a {
+    display: inline-block;
+    margin: 20px auto 0; 
+    padding: 8px 16px;
+    background-color: #67386C;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-/* Galería de imágenes */
-.event-gallery {
+.event-description a:hover {
+  background-color: #87528a;
+}
+
+/* ------------- SCROLL GALLERY ------------- */
+.scroll-gallery-container {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.scroll-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 20px;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
 }
 
-.event-gallery img {
-  width: 100%;
-  max-width: 260px;
-  height: 180px;
+
+.scroll-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-gallery img {
+   flex: 0 0 auto;
+  width: 350px; /* antes 250px */
+  height: 250px; /* opcional, para que no sea tan variable */
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
 }
 
-.event-gallery img:hover {
-  transform: scale(1.03);
-  filter: brightness(1.1);
+.scroll-gallery img:hover {
+  transform: scale(1.05);
 }
+
+.scroll-btn {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+
+
 
 
 
@@ -266,7 +328,7 @@ section {
 .footer {
     background-color: var(--color-primario);
     color: var(--color-secundario);
-    padding: 40px 20px 20px;
+    padding: 20px 20px 20px;
     margin-top: 60px;
     font-size: 0.95rem;
 }
@@ -279,6 +341,7 @@ section {
     max-width: 1200px;
     margin: auto;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .footer-section {
@@ -367,6 +430,9 @@ section {
     .title {
         font-size: 2rem;
     }
+    section{
+        margin-top: 100px;
+    }
 
     .subtitle {
         font-size: 1.2rem;
@@ -381,6 +447,20 @@ section {
         width: 90%;
         margin-bottom: 20px;
     }
+
+    .event-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-description {
+    text-align: center;
+  }
+  .event-gallery{
+    display: none;
+  }
+
 
 
     .footer-content {

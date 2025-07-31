@@ -48,7 +48,7 @@
 
         <section class="talleres-section">
             <div class="talleres-wrapper">
-                <h2 class="talleres-title">TALLERES:</h2>
+                <h2 class="talleres-title">Talleres:</h2>
     
                 <div class="card-container">
                     <div class="card" style="background-image: url('assets/images/img1.jpeg');">
@@ -78,15 +78,32 @@
                     <p>
                         El <strong>Banquete Filosófico</strong> es un espacio de encuentro y reflexión donde convergen ideas, preguntas y experiencias compartidas. A lo largo de sus dos ediciones, exploramos desde el pensamiento clásico hasta discusiones contemporáneas, en un ambiente relajado, con comida, vino y mucha filosofía. Esta propuesta busca sacar la filosofía del aula y llevarla a la mesa, a la calle, al cuerpo. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur inventore ut nulla quidem. Ipsam iste consectetur iure magnam eveniet maxime saepe esse similique odit. Obcaecati debitis ipsam quam eveniet saepe.
                     </p>
+                    <a href="https://www.instagram.com/horizontesculturales/?hl=es">Seguinos para estar al tanto</a>
                 </div>
             </div>
 
-            <div class="event-gallery">
-                <img src="assets/images/banquete1.jpg" alt="Banquete edición 1">
-                <img src="assets/images/banquete2.jpg" alt="Banquete edición 2">
-                <img src="assets/images/banquete3.jpg" alt="Participantes compartiendo">
+
+        </section>
+
+        
+        <div class="scroll-gallery-container">
+            <button class="scroll-btn left">&larr;</button>
+  
+            <div class="scroll-gallery">
+                <img src="assets/images/1.jpg" alt="...">
+                <img src="assets/images/2.jpg" alt="...">
+                <img src="assets/images/3.jpg" alt="...">
+                <img src="assets/images/1.jpg" alt="...">
+                <img src="assets/images/2.jpg" alt="...">
+                <img src="assets/images/3.jpg" alt="...">
+                <img src="assets/images/1.jpg" alt="...">
+                <img src="assets/images/2.jpg" alt="...">
+                <img src="assets/images/3.jpg" alt="...">
             </div>
-</section>
+
+            <button class="scroll-btn right">&rarr;</button>
+        </div>
+
 
 
 
@@ -128,7 +145,24 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('show');
         });
+        
     </script>
+    <script>
+  document.querySelectorAll('.scroll-gallery-container').forEach(container => {
+    const gallery = container.querySelector('.scroll-gallery');
+    const leftBtn = container.querySelector('.scroll-btn.left');
+    const rightBtn = container.querySelector('.scroll-btn.right');
+    const scrollAmount = 300;
+
+    leftBtn.addEventListener('click', () => {
+      gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+</script>
     
 
 </body>
